@@ -4,6 +4,7 @@
  */
 package application;
 
+import entities.Triangulo;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -16,40 +17,43 @@ public class Program {
         
         Locale.setDefault(Locale.US);
         
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner;
+        scanner = new Scanner(System.in);
         
-        double xA, xB, xC;
-        double yA, yB, yC;
+        Triangulo x, y;
+        
+        x = new Triangulo();
+        y = new Triangulo();    
         
         System.out.println("Entre com as medidas do triangulo X.");
         
         System.out.println("Informe a medida do lado A:");
-        xA = scanner.nextDouble();
+        x.ladoA = scanner.nextDouble();
         System.out.println("Informe a medida do lado B:");
-        xB = scanner.nextDouble();
+        x.ladoB = scanner.nextDouble();
         System.out.println("Informe a medida do lado C:");
-        xC = scanner.nextDouble();
+        x.ladoC = scanner.nextDouble();
         
         System.out.println("Informe as medidas do triangulo Y.");
         
         System.out.println("Informe a medida do lado A:");
-        yA = scanner.nextDouble();
+        y.ladoA = scanner.nextDouble();
         System.out.println("Informe a medida do lado B:");
-        yB = scanner.nextDouble();
+        y.ladoB = scanner.nextDouble();
         System.out.println("Informe a medida do lado C:");
-        yC = scanner.nextDouble();
+        y.ladoC = scanner.nextDouble();
         
-        double pX = (xA + xB + xC) / 2.0;
-        double pY = (yA + yB + yC) / 2.0;
+        double pX = (x.ladoA + x.ladoB + x.ladoC) / 2.0;
+        double pY = (y.ladoA + y.ladoB + y.ladoC) / 2.0;
         
-        double trianguloX = Math.sqrt(pX * (pX - xA) * (pX - xB) * (pX - xC));
-        double trianguloY = Math.sqrt(pY * (pY - yA) * (pY - yB) * (pY - yC));
+        double areaTrianguloX = Math.sqrt(pX * (pX - x.ladoA) * (pX - x.ladoB) * (pX - x.ladoC));
+        double areaTrianguloY = Math.sqrt(pY * (pY - y.ladoA) * (pY - y.ladoB) * (pY - y.ladoC));
 
-        System.out.printf("Triangulo X -> %.4f%n", trianguloX);
-        System.out.printf("Triangulo y -> %.4f%n", trianguloY);
+        System.out.printf("Triangulo X -> %.4f%n", areaTrianguloX);
+        System.out.printf("Triangulo y -> %.4f%n", areaTrianguloY);
 
         
-        if (trianguloX > trianguloY) {
+        if (areaTrianguloX > areaTrianguloY) {
             System.out.println("Triangulo X é maior");
         } else {
             System.out.println("Triangulo Y é maior");
