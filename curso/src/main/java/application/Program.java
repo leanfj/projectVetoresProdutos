@@ -43,11 +43,8 @@ public class Program {
         System.out.println("Informe a medida do lado C:");
         y.ladoC = scanner.nextDouble();
         
-        double pX = (x.ladoA + x.ladoB + x.ladoC) / 2.0;
-        double pY = (y.ladoA + y.ladoB + y.ladoC) / 2.0;
-        
-        double areaTrianguloX = Math.sqrt(pX * (pX - x.ladoA) * (pX - x.ladoB) * (pX - x.ladoC));
-        double areaTrianguloY = Math.sqrt(pY * (pY - y.ladoA) * (pY - y.ladoB) * (pY - y.ladoC));
+        double areaTrianguloX = x.calculaArea();
+        double areaTrianguloY = y.calculaArea();
 
         System.out.printf("Triangulo X -> %.4f%n", areaTrianguloX);
         System.out.printf("Triangulo y -> %.4f%n", areaTrianguloY);
