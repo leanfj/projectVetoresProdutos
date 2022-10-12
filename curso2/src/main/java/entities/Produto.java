@@ -13,8 +13,10 @@ public class Produto {
     private double preco;
     private int quantidade;
 
-    public Produto() {
-        this.quantidade = 0;
+    public Produto(int quantidade, String nome, double preco) {
+        this.quantidade = quantidade;
+        this.nome = nome;
+        this.preco = preco;
     }
 
     public String getNome() {

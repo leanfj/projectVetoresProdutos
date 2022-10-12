@@ -13,32 +13,33 @@ import java.util.Scanner;
  * @author leandro
  */
 public class Program {
+
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner scanner;
         scanner = new Scanner(System.in);
-        
-        Produto produto;
-              
-        produto = new Produto();
-        
+
         System.out.println("Informe os dados do produto:");
-                
+
         System.out.println("Informe o nome:");
-        produto.setNome(scanner.next());
+        String nome = scanner.nextLine();
         System.out.println("Informe o preço");
-        produto.setPreco(scanner.nextDouble());
+        double preco = scanner.nextDouble();
         System.out.println("Informe a quantidade:");
-        produto.setQuantidade(scanner.nextInt());
-        
+        int quantidade = scanner.nextInt();
+
+        Produto produto;
+
+        produto = new Produto(quantidade, nome, preco);
+
         produto.imprirStatus();
-        
+
         System.out.println("Entre a quantidade de produtos para adicionar ao estoque:");
         produto.adicionarProduto(scanner.nextInt());
-        
+
         System.out.println("Entre a quantidade de produtos para remover do estoque:");
-        produto.removerProduto(scanner.nextInt());        
-        
+        produto.removerProduto(scanner.nextInt());
+
         scanner.close();
     }
 }
