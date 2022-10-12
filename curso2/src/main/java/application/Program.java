@@ -25,12 +25,10 @@ public class Program {
         String nome = scanner.nextLine();
         System.out.println("Informe o preço");
         double preco = scanner.nextDouble();
-        System.out.println("Informe a quantidade:");
-        int quantidade = scanner.nextInt();
 
         Produto produto;
 
-        produto = new Produto(quantidade, nome, preco);
+        produto = new Produto(nome, preco);
 
         produto.imprirStatus();
 

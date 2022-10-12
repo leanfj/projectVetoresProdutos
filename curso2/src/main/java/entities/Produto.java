@@ -13,8 +13,20 @@ public class Produto {
     private double preco;
     private int quantidade;
 
+    //Construtor padrão
+    public Produto () {
+        
+    }
+    
     public Produto(int quantidade, String nome, double preco) {
         this.quantidade = quantidade;
+        this.nome = nome;
+        this.preco = preco;
+    }
+    
+    //Sobrecarga de construto - modificação de assinatura de construtor
+    public Produto(String nome, double preco) {
+        this.quantidade = 0;
         this.nome = nome;
         this.preco = preco;
     }
