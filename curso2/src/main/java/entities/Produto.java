@@ -51,12 +51,11 @@ public class Produto {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    private void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
 
     public double valorTotalEmEstoque () {
-        
         return this.getQuantidade() * this.getPreco();
     }
     
